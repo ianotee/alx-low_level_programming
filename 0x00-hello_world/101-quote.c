@@ -2,14 +2,14 @@
 #include <unistd.h>
 
 /**
- * main - The program will print the text and adds to a new line.
+ * main - The function will print the text.
  *
- * Return: 0 if (Successful).
+ * Return: 0 if (Sueccesful).
  */
 
 int main(void)
 {
-	write(2,"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",59);
-                  
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+
 	return (1);
 }
