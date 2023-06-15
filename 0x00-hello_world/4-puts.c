@@ -1,11 +1,14 @@
 #include <stdio.h>
-/*
- * The main function will contain the code to be executed.
- * puts this will printf out our text.
- * return the program will return a value of zero.
+
+/**
+ * main - Prints the string  char.
+ *
+ * Return: 0 if successful.
  */
+
 int main(void)
 {
-	puts("Programming is like building a multilingual puzzle\n");
-	return(0);
+	puts("\"Programming is like building a multilingual puzzle");
+
+	return (0);
 }
