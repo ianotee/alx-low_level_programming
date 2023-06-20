@@ -1,19 +1,18 @@
 #include "main.h"
 
 /**
- * main - This is the main Function.
+ * main - The Function.
  *
  * Return: 0 if(successful).
  */
-
 int main(void)
 {
-	char my_Function[] = "_putchar";
+	char myFunction[] = "_putchar";
 	int i;
 
-	while (my_Function[i] != '\0')
+	while (myFunction[i])
 	{
-		_putchar(my_Function[i]);
+		_putchar(myFunction[i]);
 		i++;
 	}
 	_putchar('\n');
