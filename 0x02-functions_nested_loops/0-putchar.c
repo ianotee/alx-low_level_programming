@@ -10,7 +10,7 @@ int main(void)
 	char myFunction[] = "_putchar";
 	int i;
 
-	while (myFunction[i])
+	while (myFunction[i] != '\0')
 	{
 		_putchar(myFunction[i]);
 		i++;
