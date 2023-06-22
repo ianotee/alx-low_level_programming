@@ -27,10 +27,10 @@ void print_diagonal(int n)
 				else if (n < i)
 				{
 					_putchar(' ');
-				}
+                                                				}
 
 			}
-			_putchar(' ');
+			_putchar('\n');
 		}
 	}
 }
