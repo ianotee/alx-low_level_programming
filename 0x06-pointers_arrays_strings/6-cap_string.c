@@ -1,15 +1,14 @@
 #include "main.h"
 
 /**
- *cap_string -  a function that capitalizes all words of a string.
- *@str: Char param.
- *Return: `str`
+ * cap_string - capitalize all words of a string
+ * @str: string
+ * Return: `str`
  */
 
 char *cap_string(char *str)
 {
 	int i, c;
-
 	int trigger;
 	char nots[] = ",;.!?(){}\n\t\" ";
 
@@ -25,7 +24,7 @@ char *cap_string(char *str)
 
 		if (trigger)
 		{
-			if (str[i] > 96  && str[i] < 123)
+			if (str[i] > 96 && str[i] < 123)
 			{
 				str[i] -= 32;
 				trigger = 0;
@@ -38,4 +37,3 @@ char *cap_string(char *str)
 	}
 	return (str);
 }
-
