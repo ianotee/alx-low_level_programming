@@ -23,7 +23,7 @@ void print_diagsums(int *a, int size)
 
 		i++;
 	}
-	printf("%d", sum);
+	printf("%d, ", sum);
 
 	sum = 0;
 	i = 0;
