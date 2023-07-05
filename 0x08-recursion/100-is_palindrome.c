@@ -17,6 +17,7 @@ int is_palindrome(char *s)
 	return (my_pal(s, --length));
 }
 
+
 /**
  * get_length - gets length of string
  * @s: string
@@ -35,7 +36,7 @@ int get_length(char *s)
  * my_pal - recursive check of palindrome
  * @s: string
  * @l: length of string
- * Return: 1 if palindrome, 0 if not
+ *Return: 1 if palindrome, 0 if not
  */
 
 int my_pal(char *s, int l)
@@ -43,10 +44,13 @@ int my_pal(char *s, int l)
 	if (*s == *(s + l))
 	{
 		if (l <= 0)
-			return (l);
+			return (1);
 		else
 			return (my_pal(++s, l - 2));
 	}
 	else
 		return (0);
 }
+
+
+
