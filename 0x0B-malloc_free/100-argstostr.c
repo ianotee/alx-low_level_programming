@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * argstostr - concatenate all arguments of your program with newline
+ * argstostr -  a function that concatenates all the arguments
+ * of your program.
  * @ac: argument count
  * @av: double pointer to array of strings passed to main
  * Return: Null if fail, else return pointer to new string
