@@ -6,14 +6,13 @@
  * Return: 0 if successs.
  */
 
-void free_listp(listp_t **head)
+
+void free_listp2(listp_t **head)
 {
 	listp_t *temp;
 	listp_t *curr;
 
-
 	if (head != NULL)
-
 	{
 		curr = *head;
 		while ((temp = curr) != NULL)
@@ -21,11 +20,8 @@ void free_listp(listp_t **head)
 			curr = curr->next;
 			free(temp);
 		}
-
 		*head = NULL;
-
 	}
-
 }
 
 /**
@@ -33,6 +29,7 @@ void free_listp(listp_t **head)
  * @h: head of list.
  * Return: size if sucess.
  */
+
 size_t free_listint_safe(listint_t **h)
 {
 	size_t nnodes = 0;
@@ -59,7 +56,7 @@ size_t free_listint_safe(listint_t **h)
 			if (*h == add->p)
 			{
 				*h = NULL;
-				free_listp(&hptr);
+				free_listp2(&hptr);
 				return (nnodes);
 			}
 		}
@@ -71,6 +68,6 @@ size_t free_listint_safe(listint_t **h)
 	}
 
 	*h = NULL;
-	free_listp(&hptr);
+	free_listp2(&hptr);
 	return (nnodes);
 }
