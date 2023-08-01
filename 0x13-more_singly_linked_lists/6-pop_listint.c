@@ -9,21 +9,21 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *temp;
+	listint_t *shon;
 
-	int n;
-
-
-	temp = *head;
+	int x;
 
 
-	if (temp == NULL)
+	shon = *head;
+
+
+	if (shon == NULL)
 		return (0);
 
 
-	*head = temp->next;
+	*head = shon->next;
 
-	n = temp->n;
-	free(temp);
-	return (n);
+	x = temp->x;
+	free(shon);
+	return (x);
 }
