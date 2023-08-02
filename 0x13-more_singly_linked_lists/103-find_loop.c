@@ -8,31 +8,31 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *node1, *node2;
+listint_t *drive1, *drive2;
 
 if (head == NULL || head->next == NULL)
 return (NULL);
 
-node1 = head->next;
-node2 = (head->next)->next;
+drive1 = head->next;
+drive2 = (head->next)->next;
 
-while (node2)
+while (drive2)
 {
-if (node1 == node2)
+if (drive1 == drive2)
 {
-node1 = head;
+drive1 = head;
 
-while (node1 != node2)
+while (drive1 != drive2)
 {
-node1 = node1->next;
-node2 = node2->next;
+drive1 = drive1->next;
+drive2 = drive2->next;
 }
 
-return (node1);
+return (drive1);
 }
 
-node1 = node1->next;
-node2 = (node2->next)->next;
+drive1 = drive1->next;
+drive2 = (drive2->next)->next;
 }
 
 return (NULL);
