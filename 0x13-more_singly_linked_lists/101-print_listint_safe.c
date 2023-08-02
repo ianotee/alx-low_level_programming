@@ -7,16 +7,16 @@
  */
 void free_listp(listp_t **head)
 {
-	listp_t *temp;
-	listp_t *curr;
+	listp_t *tim;
+	listp_t *core;
 
 	if (head != NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
+		core = *head;
+		while ((tim = core) != NULL)
 		{
-			curr = curr->next;
-			free(temp);
+			core = core->next;
+			free(tim);
 		}
 		*head = NULL;
 	}
@@ -29,7 +29,7 @@ void free_listp(listp_t **head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nnodes = 0;
+	size_t moon = 0;
 	listp_t *hptr, *new, *add;
 
 	hptr = NULL;
@@ -53,15 +53,15 @@ size_t print_listint_safe(const listint_t *head)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
 				free_listp(&hptr);
-				return (nnodes);
+				return (moon);
 			}
 		}
 
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
-		nnodes++;
+		moon++;
 	}
 
 	free_listp(&hptr);
-	return (nnodes);
+	return (moon);
 }
