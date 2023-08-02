@@ -9,16 +9,16 @@
 
 void free_listp2(listp_t **head)
 {
-	listp_t *temp;
-	listp_t *curr;
+	listp_t *num10;
+	listp_t *tor;
 
 	if (head != NULL)
 	{
-		curr = *head;
-		while ((temp = curr) != NULL)
+		tor = *head;
+		while ((num10 = tor) != NULL)
 		{
-			curr = curr->next;
-			free(temp);
+			tor = tor->next;
+			free(num10);
 		}
 		*head = NULL;
 	}
@@ -32,9 +32,9 @@ void free_listp2(listp_t **head)
 
 size_t free_listint_safe(listint_t **h)
 {
-	size_t nnodes = 0;
+	size_t mode = 0;
 	listp_t *hptr, *new, *add;
-	listint_t *curr;
+	listint_t *tor;
 
 	hptr = NULL;
 	while (*h != NULL)
@@ -57,17 +57,17 @@ size_t free_listint_safe(listint_t **h)
 			{
 				*h = NULL;
 				free_listp2(&hptr);
-				return (nnodes);
+				return (mode);
 			}
 		}
 
-		curr = *h;
+		tor = *h;
 		*h = (*h)->next;
-		free(curr);
-		nnodes++;
+		free(tor);
+		mode++;
 	}
 
 	*h = NULL;
 	free_listp2(&hptr);
-	return (nnodes);
+	return (mode);
 }
