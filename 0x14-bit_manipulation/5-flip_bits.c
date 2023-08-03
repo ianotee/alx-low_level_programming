@@ -13,7 +13,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int moon;
 	unsigned long int more = n ^ m;
 
-	for (w = 64; w >= 0; w--)
+	for (w = 63; w >= 0; w--)
 	{
 		moon = more >> w;
 
