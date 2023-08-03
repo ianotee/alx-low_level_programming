@@ -10,14 +10,11 @@
 unsigned int binary_to_uint(const char *b)
 {
 	int w;
-
 	unsigned int my_Num;
 
 	my_Num = 0;
-
 	if (!b)
 		return (0);
-
 	for (w = 0; b[w] != '\0'; w++)
 	{
 		if (b[w] != '0' && b[w] != '1')
