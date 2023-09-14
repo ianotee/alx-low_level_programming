@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * free_dlistint - frees a dlistint_t list
- * @head: head 
- * Return:0 if (success)
+ * free_dlistint - frees.
+ * @head: head nodes
+ * Return: i (success)
  */
 void free_dlistint(dlistint_t *head)
 {
