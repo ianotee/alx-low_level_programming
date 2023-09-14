@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - returns the 
- * @head: head of the list
- * @index: 0 
- * Return: 0 if (success).
+ * get_dnodeint_at_index - This is the function
+ * @head: head of node
+ * @index: node 
+ * Return: if (success).
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
