@@ -3,7 +3,7 @@
 /**
  * shash_table_create -Create hash table.
  * @size: Size of hash table.
- * Return: to new table, otherwise NULL.
+ * Return: to new table.
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
@@ -30,9 +30,9 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * shash_add -Adds node for the sorted hash.
- * @key: Key.
- * @value: value for storing.
+ * shash_add -Adds a node
+ * @key: Key to the hash Table.
+ * @value: value.
  * Return: To new node, otherwise NULL.
  */
 shash_node_t *shash_add(const char *key, const char *value)
@@ -62,8 +62,8 @@ shash_node_t *shash_add(const char *key, const char *value)
 /**
  * add_node -Add node to linked list.
  * @table: Hash table.
- * @node: The Node.
- * Return: Void.
+ * @node: The node of the list.
+ * Return: 0 if (succesful).
  */
 void add_node(shash_table_t *table, shash_node_t *node)
 {
@@ -96,11 +96,11 @@ void add_node(shash_table_t *table, shash_node_t *node)
 }
 
 /**
- * shash_table_set -Sets key to a value in hash table.
+ * shash_table_set -Sets key to a value in the  table.
  * @ht: Hash table.
- * @key: Key.
+ * @key: The key to the hash table.
  * @value: Value for adding.
- * Return: 1 for success, 0 otherwise.
+ * Return: 1 if (successful).
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
@@ -138,8 +138,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 /**
  * shash_table_get -Gets value from hash table.
  * @ht: Hash table.
- * @key: key to the data
- * Return: To value, otherwise NULL.
+ * @key: key to hash table.
+ * Return: 0 zero if (succesful).
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
@@ -163,7 +163,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 /**
  * shash_table_print -Prints hash table.
  * @ht: Hash table.
- * Return: Void.
+ * Return: 0 if (succes).
  */
 void shash_table_print(const shash_table_t *ht)
 {
@@ -186,14 +186,14 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print_rev -Prints hash table in reverse.
- * @ht: Hash table.
- * Return: Void.
+ * shash_table_print_rev -Prints the table in reverse.
+ * @ht: The hash table.
+ * Return: The table.
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *tmp;
-	char flag = 0; /* 0 before printing any data, 1 after*/
+	char flag = 0; /* 0  printing any data, 1 after*/
 
 	if (ht == NULL || ht->array == NULL)
 		return;
@@ -211,9 +211,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * shash_table_delete -Deletes hash table.
- * @ht: Hash table.
- * Return: void.
+ * shash_table_delete -This function deletes the hash table.
+ * @ht: The Hash Table of the Function
+ * Return: The Void zero.
  */
 void shash_table_delete(shash_table_t *ht)
 {
