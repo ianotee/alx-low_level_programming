@@ -1,60 +1,60 @@
 #include "search_algos.h"
 
-int binary_search_recursion(int *array, int value,
-			    size_t low, size_t high);
-
 /**
- * binary_search_recursion - helper to `advanced_binary`.
- * @array: pointer to first element of array.
- * @value:  search 
- * @low:  index in array
- * @high:  index in array
- * Return: index containing `value`.
+ * rec_search - For searching value in an array.
+ * @value: The value to search in
+ * @size: The size of the array
+ * @array: The input array
+ * Return: index of the number
  */
-int binary_search_recursion(int *array, int value,
-			    size_t low, size_t high)
+int rec_search(int *array, size_t size, int value)
 {
-	size_t mid, i;
+	size_t half = size / 2;
+	size_t i;
 
-	if (!array)
+	if (array == NULL || size == 0)
 		return (-1);
 
-	mid = (low + high) / 2;
-	printf("Searching in array: ");
-	for (i = low; i <= high; i++)
-		printf("%i%s", array[i], i == high ? "\n" : ", ");
+	printf("Searching in array");
 
-	if (array[low] == value)
-		return ((int)low);
+	for (i = 0; i < size; i++)
+		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 
-	if (array[low] != array[high])
+	printf("\n");
+
+	if (half && size % 2 == 0)
+		half--;
+
+	if (value == array[half])
 	{
-		if (array[mid] < value)
-			return (binary_search_recursion(array, value,
-							mid + 1, high));
-		if (array[mid] >= value)
-			return (binary_search_recursion(array, value,
-							low, mid));
+		if (half > 0)
+			return (rec_search(array, half + 1, value));
+		return ((int)half);
 	}
 
-	return (-1);
+	if (value < array[half])
+		return (rec_search(array, half + 1, value));
+
+	half++;
+	return (rec_search(array + half, size - half, value) + half);
 }
 
 /**
- * advanced_binary - searches for a value of array.
- * @array: pointer to first array.
- * @size: number arrays.
- * @value: search.
- * Return: first index containing `value.
+ * advanced_binary - For calling to rec_search to return
+ * the index of the number.
+ * @value: The value to search in
+ * @size: The size of the array
+ * @array: The input array
+ * Return: index of the number
  */
-
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t low = 0;
-	size_t high = size - 1;
+	int index;
 
-	if (!array)
+	index = rec_search(array, size, value);
+
+	if (index >= 0 && array[index] != value)
 		return (-1);
 
-	return (binary_search_recursion(array, value, low, high));
-}0
+	return (index);
+}
